@@ -10,6 +10,11 @@ var lowerCase;
 var upperCase;
 var numeric;
 var specialChar;
+var charLowerCase = 'abcdefghijklmnopqrstuvwxyz'
+var charUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+var charNumeric = '1234567890'
+var charSpecial = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+var charPossible = ''
 
 
 // Write password to the #password input
@@ -54,7 +59,7 @@ function charChoice() {
       }
         
   var specialVal = function () {
-      specialChar = confirm("Would you like to use special characters?");
+      special = confirm("Would you like to use special characters?");
       validator4 = confirm("are you sure?");
       }      
       specialVal();
@@ -71,6 +76,22 @@ function charChoice() {
   } else {
     alert("Sorry, you have to choose at least one character type. Let's try this again");
     charChoice();
+  }
+
+  if (lowerCase === true) {
+    charPossible = charPossible + charLowerCase;
+  }
+
+  if (upperCase === true) {
+    charPossible = charPossible + charUpperCase;
+  }
+  
+  if (numeric === true) {
+    charPossible = charPossible + charNumeric;
+  }
+  
+  if (specialChar === true) {
+    charPossible = charPossible + charSpecial;
   }
 
   
